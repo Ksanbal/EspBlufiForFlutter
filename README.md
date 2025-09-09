@@ -1,9 +1,9 @@
-# blufi_plugin
+# esp_blufi_for_flutter
 
 EspBlufi plugin, use two library
 
-iOS: https://github.com/EspressifApp/EspBlufiForiOS
-Android: https://github.com/EspressifApp/EspBlufiForAndroid
+- iOS: https://github.com/EspressifApp/EspBlufiForiOS
+- Android: https://github.com/EspressifApp/EspBlufiForAndroid
 
 ## Getting Started
 
