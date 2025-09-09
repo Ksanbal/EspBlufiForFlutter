@@ -48,7 +48,11 @@
         
         if (device.name == nil) return;
 
-        if (self.filterContent != nil && ![self.filterContent isEqualToString:@""] && ![device.name.lowercaseString containsString:self.filterContent.lowercaseString]) return;
+        if (self.filterContent != nil && ![self.filterContent isKindOfClass:[NSNull class]] &&
+            ![self.filterContent isEqualToString:@"@"] &&
+            ![device.name.lowercaseString containsString:self.filterContent.lowercaseString]) {
+            return;
+        }
         
         self.dataDictionary[device.uuid.UUIDString] = device;
         [self updateMessage:[self makeScanDeviceJsonWithAddress:device.uuid.UUIDString name:device.name rssi:device.rssi]];
