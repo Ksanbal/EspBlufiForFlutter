@@ -1,5 +1,7 @@
 # esp_blufi_for_flutter
 
+> Forked from [blufi_plugin](https://pub.dev/packages/blufi_plugin)
+
 EspBlufi plugin, use two library
 
 - iOS: https://github.com/EspressifApp/EspBlufiForiOS
