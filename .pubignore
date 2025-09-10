@@ -1,0 +1,8 @@
+# Files to exclude from publication
+.DS_Store
+.dart_tool/
+.packages
+example/pubspec.lock
+pubspec.lock
+.idea/
+lib/blufi_plugin.dart

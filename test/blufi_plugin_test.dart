@@ -1,6 +1,5 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:blufi_plugin/blufi_plugin.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('blufi_plugin');
@@ -16,6 +15,4 @@ void main() {
   tearDown(() {
     channel.setMockMethodCallHandler(null);
   });
-
-
 }
