@@ -1,8 +1,8 @@
-package vn.vconnex.blufi_plugin.constants;
+package trade.ksanbal.esp_blufi_for_flutter.constants;
 
 import java.util.UUID;
 
-import vn.vconnex.blufi_plugin.params.BlufiParameter;
+import trade.ksanbal.esp_blufi_for_flutter.params.BlufiParameter;
 
 
 public final class BlufiConstants {

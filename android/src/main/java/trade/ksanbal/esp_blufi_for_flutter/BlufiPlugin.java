@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin;
+package trade.ksanbal.esp_blufi_for_flutter;
 
 import android.Manifest;
 
@@ -48,12 +48,12 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import vn.vconnex.blufi_plugin.constants.BlufiConstants;
-import vn.vconnex.blufi_plugin.params.BlufiConfigureParams;
-import vn.vconnex.blufi_plugin.params.BlufiParameter;
-import vn.vconnex.blufi_plugin.response.BlufiScanResult;
-import vn.vconnex.blufi_plugin.response.BlufiStatusResponse;
-import vn.vconnex.blufi_plugin.response.BlufiVersionResponse;
+import trade.ksanbal.esp_blufi_for_flutter.constants.BlufiConstants;
+import trade.ksanbal.esp_blufi_for_flutter.params.BlufiConfigureParams;
+import trade.ksanbal.esp_blufi_for_flutter.params.BlufiParameter;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiScanResult;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiStatusResponse;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiVersionResponse;
 
 /** BlufiPlugin */
 public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHandler {
@@ -98,9 +98,9 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     handler = new Handler(Looper.getMainLooper());
-    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "blufi_plugin");
+    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "esp_blufi_for_flutter");
     channel.setMethodCallHandler(this);
-    stateChannel = new EventChannel(flutterPluginBinding.getBinaryMessenger(), "blufi_plugin/state");
+    stateChannel = new EventChannel(flutterPluginBinding.getBinaryMessenger(), "esp_blufi_for_flutter/state");
     streamHandler = new EventChannel.StreamHandler() {
       @Override
       public void onListen(Object arguments, EventChannel.EventSink events) {

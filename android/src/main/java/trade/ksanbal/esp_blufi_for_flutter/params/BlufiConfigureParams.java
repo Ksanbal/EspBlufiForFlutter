@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin.params;
+package trade.ksanbal.esp_blufi_for_flutter.params;
 
 import java.io.Serializable;
 import java.util.Locale;

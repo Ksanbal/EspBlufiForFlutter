@@ -1,6 +1,6 @@
-package vn.vconnex.blufi_plugin;
+package trade.ksanbal.esp_blufi_for_flutter;
 
-import vn.vconnex.blufi_plugin.params.BlufiParameter;
+import trade.ksanbal.esp_blufi_for_flutter.params.BlufiParameter;
 
 public class FrameCtrlData {
     private static final int FRAME_CTRL_POSITION_ENCRYPTED = 0;

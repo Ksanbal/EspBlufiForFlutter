@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin;
+package trade.ksanbal.esp_blufi_for_flutter;
 
 import java.io.ByteArrayOutputStream;
 

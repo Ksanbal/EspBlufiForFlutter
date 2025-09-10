@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin;
+package trade.ksanbal.esp_blufi_for_flutter;
 
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
@@ -6,9 +6,9 @@ import android.bluetooth.BluetoothGattService;
 
 import java.util.List;
 
-import vn.vconnex.blufi_plugin.response.BlufiScanResult;
-import vn.vconnex.blufi_plugin.response.BlufiStatusResponse;
-import vn.vconnex.blufi_plugin.response.BlufiVersionResponse;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiScanResult;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiStatusResponse;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiVersionResponse;
 
 
 public abstract class BlufiCallback {

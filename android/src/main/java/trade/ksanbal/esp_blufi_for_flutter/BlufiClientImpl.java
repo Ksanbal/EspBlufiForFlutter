@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin;
+package trade.ksanbal.esp_blufi_for_flutter;
 
 import android.annotation.TargetApi;
 import android.bluetooth.BluetoothDevice;
@@ -31,15 +31,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import javax.crypto.interfaces.DHPublicKey;
 
-import vn.vconnex.blufi_plugin.params.BlufiConfigureParams;
-import vn.vconnex.blufi_plugin.params.BlufiParameter;
-import vn.vconnex.blufi_plugin.response.BlufiScanResult;
-import vn.vconnex.blufi_plugin.response.BlufiStatusResponse;
-import vn.vconnex.blufi_plugin.response.BlufiVersionResponse;
-import vn.vconnex.blufi_plugin.security.BlufiAES;
-import vn.vconnex.blufi_plugin.security.BlufiCRC;
-import vn.vconnex.blufi_plugin.security.BlufiDH;
-import vn.vconnex.blufi_plugin.security.BlufiMD5;
+import trade.ksanbal.esp_blufi_for_flutter.params.BlufiConfigureParams;
+import trade.ksanbal.esp_blufi_for_flutter.params.BlufiParameter;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiScanResult;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiStatusResponse;
+import trade.ksanbal.esp_blufi_for_flutter.response.BlufiVersionResponse;
+import trade.ksanbal.esp_blufi_for_flutter.security.BlufiAES;
+import trade.ksanbal.esp_blufi_for_flutter.security.BlufiCRC;
+import trade.ksanbal.esp_blufi_for_flutter.security.BlufiDH;
+import trade.ksanbal.esp_blufi_for_flutter.security.BlufiMD5;
 
 
 public class BlufiClientImpl implements BlufiParameter {

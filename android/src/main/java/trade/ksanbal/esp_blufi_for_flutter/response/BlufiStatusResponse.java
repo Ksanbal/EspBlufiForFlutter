@@ -1,7 +1,7 @@
-package vn.vconnex.blufi_plugin.response;
+package trade.ksanbal.esp_blufi_for_flutter.response;
 
 
-import vn.vconnex.blufi_plugin.params.BlufiParameter;
+import trade.ksanbal.esp_blufi_for_flutter.params.BlufiParameter;
 
 public class BlufiStatusResponse {
     private int mOpMode = -1;

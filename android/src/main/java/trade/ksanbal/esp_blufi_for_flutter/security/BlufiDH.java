@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin.security;
+package trade.ksanbal.esp_blufi_for_flutter.security;
 
 import java.math.BigInteger;
 import java.security.InvalidAlgorithmParameterException;

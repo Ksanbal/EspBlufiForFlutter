@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin;
+package trade.ksanbal.esp_blufi_for_flutter;
 
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCallback;
@@ -6,8 +6,8 @@ import android.content.Context;
 
 import java.util.List;
 
-import vn.vconnex.blufi_plugin.BlufiClientImpl;
-import vn.vconnex.blufi_plugin.params.BlufiConfigureParams;
+import trade.ksanbal.esp_blufi_for_flutter.BlufiClientImpl;
+import trade.ksanbal.esp_blufi_for_flutter.params.BlufiConfigureParams;
 
 public class BlufiClient {
 //    public static final String VERSION = BuildConfig.VERSION_NAME;

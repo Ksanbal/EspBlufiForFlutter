@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin.security;
+package trade.ksanbal.esp_blufi_for_flutter.security;
 
 public class BlufiCRC {
     private static final int[] CRC_TB = {

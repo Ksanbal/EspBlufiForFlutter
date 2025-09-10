@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin.response;
+package trade.ksanbal.esp_blufi_for_flutter.response;
 
 import java.util.Locale;
 

@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin.constants;
+package trade.ksanbal.esp_blufi_for_flutter.constants;
 
 public class SettingsConstants {
     public static final String PREF_SETTINGS_NAME = "esp_settings";
