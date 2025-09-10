@@ -44,7 +44,7 @@ import trade.ksanbal.esp_blufi_for_flutter.security.BlufiMD5;
 
 public class BlufiClientImpl implements BlufiParameter {
     private static final String TAG = "BlufiClientImpl";
-    private static final boolean DEBUG = BuildConfig.DEBUG;
+    private static final boolean DEBUG = false;
 
     private static final int DEFAULT_PACKAGE_LENGTH = 20;
     private static final int PACKAGE_HEADER_LENGTH = 4;

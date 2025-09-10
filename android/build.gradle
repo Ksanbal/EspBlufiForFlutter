@@ -22,6 +22,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'trade.ksanbal.esp_blufi_for_flutter'
     compileSdkVersion 29
 
     defaultConfig {
