@@ -14,3 +14,7 @@
 ## 1.0.3
 
 - Updated version number in pubspec.yaml to 1.0.3
+
+## 1.0.4
+
+- Updated version number in pubspec.yaml to 1.0.4
