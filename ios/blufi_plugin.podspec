@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint blufi_plugin.podspec' to validate before publishing.
+# Run `pod lib lint esp_blufi_for_flutter.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'blufi_plugin'
+  s.name             = 'esp_blufi_for_flutter'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter plugin.'
   s.description      = <<-DESC
@@ -19,7 +19,7 @@ A new Flutter plugin.
   'Classes/BlufiLibrary/**/*{.h,.cpp,.a}'
   s.dependency 'Flutter'
   s.platform = :ios, '8.0'
-  s.ios.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SRCROOT)/../.symlinks/plugins/blufi_plugin/ios/Classes/BlufiLibrary/Security/openssl/include" }
+  s.ios.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SRCROOT)/../.symlinks/plugins/esp_blufi_for_flutter/ios/Classes/BlufiLibrary/Security/openssl/include" }
   s.ios.vendored_libraries = 'Classes/BlufiLibrary/Security/openssl/*{.a}'
 
   # Flutter.framework does not contain a i386 slice.

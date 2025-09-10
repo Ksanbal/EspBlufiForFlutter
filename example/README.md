@@ -1,6 +1,6 @@
-# blufi_plugin_example
+# esp_blufi_for_flutter_example
 
-Demonstrates how to use the blufi_plugin plugin.
+Demonstrates how to use the esp_blufi_for_flutter plugin.
 
 ## Getting Started
 

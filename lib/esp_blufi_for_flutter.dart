@@ -5,10 +5,8 @@ import 'package:flutter/services.dart';
 typedef ResultCallback = void Function(String? data);
 
 class BlufiPlugin {
-  final MethodChannel? _channel = const MethodChannel('blufi_plugin');
-  final EventChannel _eventChannel = EventChannel('blufi_plugin/state');
-
-
+  final MethodChannel? _channel = const MethodChannel('esp_blufi_for_flutter');
+  final EventChannel _eventChannel = EventChannel('esp_blufi_for_flutter/state');
 
   BlufiPlugin._() {
     _channel!.setMethodCallHandler(null);
@@ -24,8 +22,7 @@ class BlufiPlugin {
   static BlufiPlugin _instance = new BlufiPlugin._();
   static BlufiPlugin get instance => _instance;
 
-  void onMessageReceived(
-      {ResultCallback? successCallback, ResultCallback? errorCallback}) {
+  void onMessageReceived({ResultCallback? successCallback, ResultCallback? errorCallback}) {
     _resultSuccessCallback = successCallback;
     _resultErrorCallback = errorCallback;
   }
@@ -36,9 +33,9 @@ class BlufiPlugin {
   }
 
   Future<bool?> scanDeviceInfo({String? filterString}) async {
-   final bool? isEnable = await _channel!.invokeMethod(
-        'scanDeviceInfo', <String, dynamic>{'filter': filterString});
-   return isEnable;
+    final bool? isEnable =
+        await _channel!.invokeMethod('scanDeviceInfo', <String, dynamic>{'filter': filterString});
+    return isEnable;
   }
 
   Future stopScan() async {
@@ -46,8 +43,8 @@ class BlufiPlugin {
   }
 
   Future connectPeripheral({String? peripheralAddress}) async {
-    await _channel!.invokeMethod('connectPeripheral',
-        <String, dynamic>{'peripheral': peripheralAddress});
+    await _channel!
+        .invokeMethod('connectPeripheral', <String, dynamic>{'peripheral': peripheralAddress});
   }
 
   Future requestCloseConnection() async {
@@ -63,8 +60,8 @@ class BlufiPlugin {
   }
 
   Future configProvision({String? username, String? password}) async {
-    await _channel!.invokeMethod('configProvision',
-        <String, dynamic>{'username': username, 'password': password});
+    await _channel!.invokeMethod(
+        'configProvision', <String, dynamic>{'username': username, 'password': password});
   }
 
   Future requestDeviceStatus() async {
@@ -76,8 +73,7 @@ class BlufiPlugin {
   }
 
   Future postCustomData(String dataStr) async {
-    await _channel!.invokeMethod(
-        'postCustomData', <String, dynamic>{'custom_data': dataStr});
+    await _channel!.invokeMethod('postCustomData', <String, dynamic>{'custom_data': dataStr});
   }
 
   speechResultsHandler(dynamic event) {

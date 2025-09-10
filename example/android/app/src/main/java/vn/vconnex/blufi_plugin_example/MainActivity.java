@@ -1,4 +1,4 @@
-package vn.vconnex.blufi_plugin_example;
+package trade.ksanbal.esp_blufi_for_flutter_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

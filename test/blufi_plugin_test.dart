@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  const MethodChannel channel = MethodChannel('blufi_plugin');
+  const MethodChannel channel = MethodChannel('esp_blufi_for_flutter');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:blufi_plugin/blufi_plugin.dart';
+import 'package:esp_blufi_for_flutter/esp_blufi_for_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,28 +25,27 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     initPlatformState();
 
-    BlufiPlugin.instance.onMessageReceived(successCallback: (String data) {
-      print("success data: $data");
-      setState(() {
-        contentJson = data;
-        Map<String, dynamic> mapData = json.decode(data);
-        if (mapData.containsKey('key')) {
-          String key = mapData['key'];
-          if (key == 'ble_scan_result') {
-            Map<String, dynamic> peripheral = mapData['value'];
+    BlufiPlugin.instance.onMessageReceived(
+        successCallback: (String data) {
+          print("success data: $data");
+          setState(() {
+            contentJson = data;
+            Map<String, dynamic> mapData = json.decode(data);
+            if (mapData.containsKey('key')) {
+              String key = mapData['key'];
+              if (key == 'ble_scan_result') {
+                Map<String, dynamic> peripheral = mapData['value'];
 
-            String address = peripheral['address'];
-            String name = peripheral['name'];
-            int rssi = peripheral['rssi'];
-            print(rssi);
-            scanResult[address] = name;
-          }
-        }
-      });
-    },
-    errorCallback: (String error) {
-
-    });
+                String address = peripheral['address'];
+                String name = peripheral['name'];
+                int rssi = peripheral['rssi'];
+                print(rssi);
+                scanResult[address] = name;
+              }
+            }
+          });
+        },
+        errorCallback: (String error) {});
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -63,7 +62,6 @@ class _MyAppState extends State<MyApp> {
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
-
   }
 
   @override
@@ -75,30 +73,40 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            TextButton(onPressed: () async {
-              await BlufiPlugin.instance.scanDeviceInfo(filterString: 'VCONNEX');
-            }, child: Text('Scan')),
-            TextButton(onPressed: () async {
-             await BlufiPlugin.instance.stopScan();
-            }, child: Text('Stop Scan')),
-            TextButton(onPressed: () async {
-             await BlufiPlugin.instance.connectPeripheral(peripheralAddress: scanResult.keys.first);
-            }, child: Text('Connect Peripheral')),
-            TextButton(onPressed: () async {
-             await BlufiPlugin.instance.requestCloseConnection();
-            }, child: Text('Close Connect')),
-            TextButton(onPressed: () async {
-             await BlufiPlugin.instance.configProvision(username: 'ABCXYZ', password: '0913456789');
-            }, child: Text('Config Provision')),
-
-            TextButton(onPressed: () async {
-              String command =
-                  '12345678';
-              await BlufiPlugin.instance.postCustomData(command);
-            }, child: Text('Send Custom Data')),
-
+            TextButton(
+                onPressed: () async {
+                  await BlufiPlugin.instance.scanDeviceInfo(filterString: 'VCONNEX');
+                },
+                child: Text('Scan')),
+            TextButton(
+                onPressed: () async {
+                  await BlufiPlugin.instance.stopScan();
+                },
+                child: Text('Stop Scan')),
+            TextButton(
+                onPressed: () async {
+                  await BlufiPlugin.instance
+                      .connectPeripheral(peripheralAddress: scanResult.keys.first);
+                },
+                child: Text('Connect Peripheral')),
+            TextButton(
+                onPressed: () async {
+                  await BlufiPlugin.instance.requestCloseConnection();
+                },
+                child: Text('Close Connect')),
+            TextButton(
+                onPressed: () async {
+                  await BlufiPlugin.instance
+                      .configProvision(username: 'ABCXYZ', password: '0913456789');
+                },
+                child: Text('Config Provision')),
+            TextButton(
+                onPressed: () async {
+                  String command = '12345678';
+                  await BlufiPlugin.instance.postCustomData(command);
+                },
+                child: Text('Send Custom Data')),
             Text(contentJson ?? '')
-
           ],
         ),
       ),
