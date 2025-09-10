@@ -26,11 +26,11 @@ class _MyAppState extends State<MyApp> {
     initPlatformState();
 
     BlufiPlugin.instance.onMessageReceived(
-        successCallback: (String data) {
+        successCallback: (String? data) {
           print("success data: $data");
           setState(() {
-            contentJson = data;
-            Map<String, dynamic> mapData = json.decode(data);
+            contentJson = data ?? 'Unknown';
+            Map<String, dynamic> mapData = json.decode(data ?? '{}');
             if (mapData.containsKey('key')) {
               String key = mapData['key'];
               if (key == 'ble_scan_result') {
@@ -45,12 +45,12 @@ class _MyAppState extends State<MyApp> {
             }
           });
         },
-        errorCallback: (String error) {});
+        errorCallback: (String? error) {});
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
+    String? platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       platformVersion = await BlufiPlugin.instance.platformVersion;
@@ -106,7 +106,7 @@ class _MyAppState extends State<MyApp> {
                   await BlufiPlugin.instance.postCustomData(command);
                 },
                 child: Text('Send Custom Data')),
-            Text(contentJson ?? '')
+            Text(contentJson)
           ],
         ),
       ),
